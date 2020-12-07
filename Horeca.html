@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Horeca app</title>
+	</head>
+		<Body>
+			<script>
+
+			alert("Hallo en welkom bij Horica app mcdonald's");
+
+			const prijsfris = 1;
+			const prijsbier = 3;
+			const prijswijn = 5;
+			const prijsbitterballen8 = 4;
+			const prijsbitterballen16 = 7;
+
+			var fris = 0;
+			var bier = 0;
+			var wijn = 0;
+			var bitterballen8 = 0;
+			var bitterballen16 = 0;
+
+			function menu(){
+
+				var doorgaan = true
+				while(doorgaan == true){
+
+					var menukaart = prompt("Wat wilt u van het menu Fris = €1, bier = €3, wijn = €5 of snacks als u wilt stoppen typ stop");
+
+					if(menukaart == "fris"){
+						fris += Number(prompt("hoeveel fris wilt u bestellen"));
+					}
+
+					else if(menukaart == "bier"){
+						bier += Number(prompt("hoeveel bier wilt u bestellen"));
+					}
+
+					else if(menukaart == "wijn"){
+						wijn += Number(prompt("hoeveel wijn wilt u bestellen"));
+					}
+
+					else if(menukaart == "snacks"){
+						var hoeveelheid = prompt("welk aantal van bitterballen wilt u bestellen 8 of 16");
+							if(hoeveelheid == "8"){
+								bitterballen8 += Number(prompt("hoeveel bitterballen van 8 wilt u bestellen"));
+							}
+
+							else if(hoeveelheid == "16"){
+								bitterballen16 += Number(prompt("hoeveel bitterballen van 16 wilt u bestellen"));
+							}
+
+							else{
+								alert("dit is niet 1 van de aantallen die je kan bestellen");
+							}
+					}
+
+					else if(menukaart == "stop"){
+						doorgaan = false;
+					}
+
+					else{
+						alert("dit staat niet op het menu");
+					}
+				}
+			}
+			menu();
+
+			function bonneje(){
+				var totalefris = fris * prijsfris;
+				var totalebier = bier * prijsbier;
+				var totalewijn = wijn * prijswijn;
+				var totalebitterballen8 = bitterballen8 * prijsbitterballen8;
+				var totalebitterballen16 = bitterballen16 * prijsbitterballen16;
+				document.write("U heeft " + fris + " fris besteld en dat kost €" + totalefris + "<br>");
+				document.write("U heeft " + bier + " bier besteld en dat kost €" + totalebier + "<br>");
+				document.write("U heeft " + wijn + " wijn besteld en dat kost €" + totalewijn + "<br>");
+				document.write("U heeft " + bitterballen8 + " bitterballen van 8 besteld en dat kost €" + totalebitterballen8 + "<br>");
+				document.write("U heeft " + bitterballen16 + " bitterballen van 16 besteld en dat kost €" + totalebitterballen16 + "<br>");
+				var totaleprijs = totalefris + totalebier + totalewijn + totalebitterballen8 + totalebitterballen16
+				document.write("het geheel wat u moet betalen is €" + totaleprijs);
+			}
+			bonneje();
+
+
+
+			</script>
+		</Body>
+</html>
